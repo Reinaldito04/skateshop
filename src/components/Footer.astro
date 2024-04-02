@@ -1,0 +1,139 @@
+<section>
+    <div class="container-fluid contenedor-principal">
+        <div class="contenedor-footer">
+           
+                <div class="container-icons border-center">
+                    
+                    <img src="/facebook.svg"></img>
+                    <img src="/X.svg"></img>
+                    <img src="/instagram.svg"></img>
+                    
+                </div>
+                <div class="container-form">
+                    <input type="text" class="form-control" placeholder="Correo electronico"/>
+                    <button>Send</button>
+                </div>
+                <h2>Mochilero</h2>
+                <div class="contenedor-logo">
+                   
+                    <img src="logo.png" class="logo" alt="">
+                </div>
+               
+            <div class="contenedor">
+                <h4  class="text-white fs-4">Copyright © 2024</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .container-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:40%;
+        margin: 0 auto;
+    }
+    button{
+        border: none;
+        border-radius: 15px;
+        padding: 16px 8px;
+        width: 80px;
+        margin-left: 10px;
+        background-color: #F2B705;
+        color: white;
+        transition: all 0.4s;
+        font-weight: bolder;
+    }
+    button:hover{
+        background-color: #F29F05;
+    }
+    input{
+        
+        margin:0 auto;
+        border-radius: 15px;
+    }
+    h4{
+        text-align: center;
+    }
+    .contenedor-principal{
+        display: flex;
+        align-items: center;
+        height: 50dvh;
+        justify-content: center;
+        width: 100%;
+
+    
+    }
+    .contenedor-footer{
+        width: 100%;
+    }
+    .container-icons{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+     
+      
+    }
+    .logo{
+        border: none;
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+    }
+    .contenedor-logo{
+        display: flex;
+    }
+    .border-center::after {
+    content: ""; /* Obligatorio para el pseudoelemento */
+    position: absolute; /* Posiciona el pseudoelemento */
+    bottom: 0; /* Alinea el pseudoelemento en la parte inferior */
+    width: 45%; /* Ancho deseado del borde en el centro */
+    height: 2px; /* Grosor del borde */
+    margin-left: -55%; /* Ajusta la posición del borde */
+    background-color: white; /* Color del borde */
+    z-index: 1; /* Asegura que esté encima de las imágenes */
+   
+}
+.border-center::before {
+    content: ""; /* Obligatorio para el pseudoelemento */
+    position: absolute; /* Posiciona el pseudoelemento */
+    bottom: 0; /* Alinea el pseudoelemento en la parte inferior */
+    width: 45%; /* Ancho deseado del borde en el centro */
+    height: 2px; /* Grosor del borde */
+    margin-right: -55%; /* Ajusta la posición del borde */
+    background-color: white; /* Color del borde */
+    z-index: 1; /* Asegura que esté encima de las imágenes */
+}
+    section{
+        background-image: url("/fondoFooter.png");
+        height: auto;
+        padding-top: 20px;
+        background-size: cover;
+    }
+   h2{
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    font-family: monospace;
+    font-style: italic;
+    
+   }
+    img{
+        height: 45px;
+        width: 45px;
+        margin:0 10px;
+        border: 2px solid white;
+        border-radius: 50%;
+        transition: all 0.8s;
+    }
+    img:hover{
+        transform: translateY(-20px);
+    }
+    
+</style>

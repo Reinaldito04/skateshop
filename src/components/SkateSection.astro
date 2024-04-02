@@ -1,0 +1,75 @@
+---
+
+import Cards from "./Cards.astro"
+---
+
+<section>
+    <div class="linea">
+
+    </div>
+    <div class="linea linea2">
+
+    </div>
+    <div class="linea linea3">
+
+    </div>
+    <div class="linea linea4">
+
+    </div>
+   <Cards/>
+
+    <div class="lineainferior"></div>
+    <div class="lineainferior lineainferior2"></div>
+    <div class="lineainferior lineainferior3"></div>
+    <div class="lineainferior lineainferior4"></div>
+</section>
+<style>
+    .linea{
+        position: absolute;
+        transform: rotate(-40deg);
+        height: 12px;
+        border-radius: 10px;
+        border: 2px solid white;
+        outline: 2px solid gray;
+        width: 150px;
+        margin-left: 95%;
+
+        background-color: black;
+    }
+    .lineainferior{
+        position: absolute;
+        transform: rotate(-40deg);
+        height: 12px;
+        border-radius: 10px;
+        border: 2px solid white;
+        outline: 2px solid gray;
+        width: 150px;
+        margin-left: -5%;
+
+        background-color: black;
+    }
+    .lineainferior2{
+        margin-top: -5%;
+    }
+    .lineainferior3{
+        margin-top: -10%;
+    }
+    .lineainferior4{
+        margin-top: -15%;
+    }
+    .linea2{
+        margin-top: 5%;
+    }
+    .linea3{
+        margin-top: 10%;
+    }
+    .linea4{
+        margin-top: 15%;
+    }
+	.col-lg-3{
+		margin-bottom: 350px;
+	}
+    section{
+        height: auto;
+    }
+</style>

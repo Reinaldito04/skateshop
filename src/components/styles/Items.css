@@ -1,0 +1,71 @@
+.sectionItems{
+    overflow: hidden;
+    background-image: url("/fondonuevoSection2.png");
+   
+    background-repeat: no-repeat;
+    height :100dvh;
+    
+    margin: 0 auto;
+   
+  
+    background-size: cover   ;
+    background-position: center;
+    transition: background-image 1.5s ease, opacity 1.2s ease; /* Añade una transición de opacidad */
+    opacity: 1; /* Establece la opacidad inicial */
+}
+.sectionItems.visible{
+    background-image: url("/fondonuevoSection1.png");
+    background-repeat: no-repeat;
+    background-size: cover   ;
+    transition: background-image 1.2s ease;
+    background-position: center;
+   
+}
+
+.tituloItems{
+    margin-top: 5%;
+    color: black;
+    font-family: cursive;
+    font-weight: bolder;
+    margin-left: 2%;
+    font-size: 2.8rem;
+}
+.parraf-Items{
+    font-size: 1.5rem;
+    text-wrap: balance;
+    width: 30%;
+    text-align: center;
+}
+
+@media (max-width: 400px){
+    .sectionItems.visible{
+        background-image: url("/fondoMovil.png");
+    }
+    .parraf-Items{
+        width: 100%;
+        font-weight: bold;
+    }
+    .tituloItems{
+        text-align: center;
+        padding-top: 20px;
+    }
+}
+@media  (min-width: 762px) and  (max-width: 800px){
+    .tituloItems{
+        margin-top: 80px;
+        text-align: center;
+    }
+    .parraf-Items{
+        width: 100%;
+        font-weight: bolder;
+        text-align: center;
+    }
+    .sectionItems{
+        background-size: cover;
+        background-position: 40%;
+    }
+    .sectionItems.visible{
+        background-size: cover;
+        background-position: 40%;
+    }
+}

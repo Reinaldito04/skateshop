@@ -1,0 +1,50 @@
+<section>
+    <div class="container-logo">
+        <img src="texto.png" alt="">
+    </div>
+</section>
+
+<style>
+
+	section{
+		background-image: url("/bannerSkate fondo 1.png");
+		background-repeat: no-repeat;
+		height: 100dvh;
+		width: 100%;
+		background-size: cover;
+		background-position: center;
+	}
+    .container-logo{
+        display: flex;
+        align-items: center;
+    }
+    img{
+        margin-top: 10%;
+        height: 200px;
+        margin-left: 8%;
+    }
+   
+    @media (max-width: 800px){
+        section{
+            background-image: url("/headerLaptop.png");
+            background-position: 60%;
+            
+           
+        }
+        img{
+            margin-top: 50%;
+            margin-left: 10px;
+        }
+    }
+    @media (max-width: 400px){
+        section{
+            background-position: center%;
+            background-image: url("/headerMovil.png");
+        }
+        img{
+            height: 100px;
+            margin-top:95%;
+            margin-left: 10px;
+        }
+    }
+</style>

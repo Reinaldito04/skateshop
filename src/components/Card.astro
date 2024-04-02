@@ -1,61 +1,153 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  img: string;
+  img2: string;
+  body: string;
+  background : string;
+  title;
 }
 
-const { href, title, body } = Astro.props;
+const { img, img2, body,background,title } = Astro.props;
+const backgroundUrl = `url(${background})`;
+   
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="container container-card">
+  <div class="contenedor-skate">
+    <img src={img} data-img={img}  data-img2={img2} class="skate" alt="" >
+  </div>
+
+  <div class="contenedor-img" style={{ backgroundImage: backgroundUrl }}>
+    <div class="container-sombra">
+      <div class="sombra"></div>
+    </div>
+  </div>
+  <div class="container-texto">
+    <p class="name">{title}</p>
+	<p class="description">{body}</p>
+    <button class="btn btn">Comprar</button>
+  </div>
+
+
+  <div class="contenedor-botones">
+    <div class="icon botonIcon front" ></div>
+    <div class="icon botonIcon back"></div>
+  </div>
+</div>
+<script>
+	let botones = document.querySelectorAll(".botonIcon");
+	let estadoImagen =1;
+	// Iterar sobre cada botón y adjuntar un evento de clic a cada uno
+	botones.forEach(function(boton) {
+	boton.addEventListener("click", function() {
+		// Encontrar la imagen correspondiente a este botón
+		let contenedor = boton.closest(".container-card");
+		let imagen = contenedor.querySelector(".skate");
+
+		// Verificar si la imagen es una instancia de HTMLImageElement
+		if (imagen instanceof HTMLImageElement) {
+		// Cambiar la imagen basada en la lógica proporcionada
+		if (estadoImagen === 1) {
+			imagen.src = imagen.dataset.img2;
+			estadoImagen = 2;
+		} else {
+			imagen.src = imagen.dataset.img;
+			estadoImagen = 1;
+		}
+		console.log("Imagen cambiada");
+		} else {
+		console.error("El elemento no es una imagen");
+		}
+	});
+});
+  </script>
+
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	.icon{
+		width: 40px;
+		background-color: transparent;
+		
+		height: 40px;
+		margin-bottom: 10px;
+		border-radius :100%;
+		cursor: pointer;
+		z-index: 99999;
 	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
+  .back{
+    background-image: url("/back.png");
+  }
+  .front{
+    background-image: url("/front.png");
+  }
+	.contenedor-botones{
+		margin-top: -200%;
+		z-index: 999999999;
+		margin-left: -25%
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.description{
+		text-wrap: balance;
+		font-size: 14px;
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .container-card {
+    align-items: center;
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+  }
+  .container-sombra {
+    text-align: center;
+    padding-top: 60%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .container-texto{
+	text-align: center;
+  }
+  button {
+    color: black;
+  }
+  * {
+    font-family: cursive;
+  }
+  .name {
+    margin: 0;
+    color: black;
+    font-weight: bold;
+  }
+  .contenedor-img {
+    
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: -60%;
+    height: 200px;
+    width: 250px;
+    clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0 100%);
+  }
+  .sombra {
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    margin-top: -96%;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+  }
+  .contenedor-skate {
+    display: flex;
+  }
+  img {
+    z-index: 999;
+    height: 350px;
+
+    width: 300px;
+	object-fit: contain;
+    transition: all 0.8s;
+	
+  }
+  img:hover {
+    transform: translateY(-10px);
+  }
 </style>
